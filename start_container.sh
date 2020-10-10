@@ -8,6 +8,7 @@ xhost +local:root
 echo "Set \$DISPLAY parameter to $DISPLAY" 
 
 docker start pcl-docker
+docker exec pcl-docker sudo service ssh start
 docker attach pcl-docker
 
 # disallow x server connection

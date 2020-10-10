@@ -30,7 +30,8 @@ You will need to have the nvidia GPU drivers and nvidia [CUDA drivers](https://l
 The image is based on [tkkhuu's one](https://github.com/tkkhuu/camera_lidar_calibration.git) with some additions to make CLion remote development work
 
 ## Clion configuration
-Follow the steps [here](https://austinmorlan.com/posts/docker_clion_development/)
+Follow the steps [here](https://austinmorlan.com/posts/docker_clion_development/).  
+Note: CMake will be installed on `/usr/local/bin/cmake` instead of on the default location
 
 
 ## Docker image
