@@ -103,3 +103,14 @@ $ nvidia-smi
 $ nvidia-smi
 $ nvcc --version
 ```
+
+### Solve the `bad x server connection` issue
+`$DISPLAY` is not set properly in the container
+In the host, run:
+```
+$ echo $DISPLAY
+```
+You should see something like `:0` or `:1`. Then inside the docker run with the right output from before:
+```
+$ export DISPLAY=:0
+```
