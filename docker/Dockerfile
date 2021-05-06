@@ -109,7 +109,7 @@ RUN wget https://github.com/PointCloudLibrary/pcl/archive/pcl-${PCL_VERSION}.tar
     && cd build \
     && cmake .. -DCMAKE_BUILD_TYPE=Release \
                 -DVTK_RENDERING_BACKEND=OpenGL2 \
-    && make -j12 \
+    && make -j$(nproc)\
     && make install
 
 RUN apt-get update && apt-get install -y pcl-tools
@@ -130,8 +130,8 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.tar.gz \
     && tar -xf ${OPENCV_VERSION}.tar.gz \
     && cd opencv-${OPENCV_VERSION} \
     && mkdir build && cd build \
-    && cmake -D CMAKE_BUILD_TYZZPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local .. \
-    && make -j12 \
+    && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local .. \
+    && make -j$(nproc) \
     && make install
 
 
